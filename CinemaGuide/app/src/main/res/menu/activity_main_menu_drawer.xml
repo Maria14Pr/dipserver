@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_journeys"
+            android:icon="@drawable/ic_menu_journeys"
+            android:title="@string/menu_journeys" />
+        <item
+            android:id="@+id/nav_films"
+            android:icon="@drawable/ic_menu_film"
+            android:title="@string/menu_films" />
+        <item
+            android:id="@+id/nav_locations"
+            android:icon="@drawable/ic_menu_location"
+            android:title="@string/menu_locations" />
+        <item
+            android:id="@+id/nav_creator"
+            android:icon="@drawable/ic_menu_create"
+            android:title="@string/menu_creator" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_profile"
+            android:title="@string/menu_profile" />
+
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/ic_menu_message"
+            android:title="@string/menu_messages" />
+        <item
+            android:id="@+id/nav_thanks"
+            android:icon="@drawable/ic_menu_thanks"
+            android:title="@string/menu_thanks" />
+    </group>
+
+
+</menu>

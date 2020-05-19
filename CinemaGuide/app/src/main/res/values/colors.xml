@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F4F0ED</color>
+    <color name="colorPrimaryDark">#F4F0ED</color>
+    <color name="mainBackground">#F4F0ED</color>
+    <color name="marineAccent">#4DB2B3</color>
+    <color name="orangeAccent">#F44F46</color>
+</resources>
