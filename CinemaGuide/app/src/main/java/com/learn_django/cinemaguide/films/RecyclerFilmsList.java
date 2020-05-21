@@ -6,12 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -67,17 +70,20 @@ public class RecyclerFilmsList extends RecyclerView.Adapter<RecyclerFilmsList.Vi
         holder.parentFilmsCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-/*
+
+                String id_clicked = String.valueOf(idFilms.get(position));
+                Log.d("data is ", "film clicked "+id_clicked);
                 Bundle bundle = new Bundle();
-                bundle.putInt("post_id",pkPost.get(position)); // Put anything what you want
+                bundle.putInt("film_id",idFilms.get(position)); // Put anything what you want
+
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                Fragment myFragment = new ShowPost();
+                Fragment myFragment = new FilmItemFragment();
                 myFragment.setArguments(bundle);
                 activity.getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container, myFragment)
+                        .replace(R.id.screen_area, myFragment)
                         .addToBackStack(null)
-                        .commit();*/
+                        .commit();
             }
         });
     }

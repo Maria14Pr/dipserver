@@ -55,5 +55,15 @@ public class FilmModel {
         return film_desc;
     }
 
+    public String getFilmGenres () {
+        StringBuilder genres_list= new StringBuilder();
+        for (int i=0; i<film_genres.length-1; i++){
+            genres_list.append(film_genres[i]).append(", ");
+        }
+        genres_list.append(film_genres[film_genres.length-1]);
+        return genres_list.toString();
+    }
+
+
 
 }

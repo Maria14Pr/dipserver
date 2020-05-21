@@ -1,6 +1,9 @@
 package com.learn_django.cinemaguide.locations;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -55,24 +58,23 @@ public class RecyclerLocationsList extends RecyclerView.Adapter<RecyclerLocation
                 .apply(requestOptions)
                 .into(holder.ivLlPhoto);
 
-        //holder.tv.setText(String.valueOf(pkPost.get(position)));
         holder.tvLlNameRus.setText(nameRusLocations.get(position));
         holder.tvLlCountry.setText(countryLocations.get(position));
 
         holder.parentLocationsCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-/*
+
                 Bundle bundle = new Bundle();
-                bundle.putInt("post_id",pkPost.get(position)); // Put anything what you want
+                bundle.putInt("location_id",idLocations.get(position)); // Put anything what you want
                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
-                Fragment myFragment = new ShowPost();
+                Fragment myFragment = new LocationItemFragment();
                 myFragment.setArguments(bundle);
                 activity.getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container, myFragment)
+                        .replace(R.id.screen_area, myFragment)
                         .addToBackStack(null)
-                        .commit();*/
+                        .commit();
             }
         });
     }

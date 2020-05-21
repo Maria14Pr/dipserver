@@ -61,6 +61,21 @@ public class LocationModel {
         return fk_country_location.getCountry_name_rus();
     }
 
+    public String getLocCurrency(){
+        return fk_country_location.getCurrency_of_country();
+    }
+
+    public String getLocation_opening_time(){
+        return location_opening_time;
+    }
+
+    public String getLocation_close_time(){
+        return location_close_time;
+    }
+
+    public float getLocation_cost() {
+        return location_visit_cost;
+    }
 
 
 }

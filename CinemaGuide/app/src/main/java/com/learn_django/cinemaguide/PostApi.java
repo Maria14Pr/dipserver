@@ -33,13 +33,16 @@ public interface PostApi {
     Call<User> registrationUser(@Body User userModel);
 
     @GET("post/films/list/ ")
-    Call<List<FilmModel>> getFilmsListPost();
+    Call<List<FilmModel>> getFilmsList();
 
     @GET("post/locations/list/ ")
-    Call<List<LocationModel>> getLocationsListPost();
+    Call<List<LocationModel>> getLocationsList();
 
-//    @GET("post/{id}/")
-//    Call<PostModel> getPost(@Path(value = "id", encoded = true) String id);
+    @GET("post/films/{id}/")
+    Call<FilmModel> getFilm(@Path(value = "id", encoded = true) String id);
+
+    @GET("post/locations/{id}/")
+    Call<LocationModel> getLocation(@Path(value = "id", encoded = true) String id);
 
 //    @POST("add/")
 //    Call<PostModel> addPost(@Header("Authorization")  String authToken, @Body PostModel postModel);

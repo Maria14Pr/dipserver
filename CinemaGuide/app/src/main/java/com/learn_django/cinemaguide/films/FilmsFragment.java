@@ -43,28 +43,31 @@ public class FilmsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ((MainMenuActivity) getActivity()).setActionBarTitle("Фильмы");
 
+        View filmsRootView = inflater.inflate(R.layout.fragment_films, container, false);
+        recyclerViewFilms = filmsRootView.findViewById(R.id.recycler_films_list);
+
         Log.d("FilmsFragment", "---------start------------");
 
         if ( InternetUtil.isInternetOnline(getActivity()) ){
-            //ClearFilmsList();
+            ClearFilmsList();
             showAllFilms();
         }
 
-        return inflater.inflate(R.layout.fragment_films, null);
+        return filmsRootView;
     }
-
+/*
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-       recyclerViewFilms = view.findViewById(R.id.recycler_films_list);
-        /*view.findViewById(R.id.imgbt).setOnClickListener(new View.OnClickListener() {
+
+        view.findViewById(R.id.imgbt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Путешествия", Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
 
     }
-
+*/
     private void showAllFilms() {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -73,7 +76,7 @@ public class FilmsFragment extends Fragment {
                 .build();
 
         PostApi postApi= retrofit.create(PostApi.class);
-        Call<List<FilmModel>> call = postApi.getFilmsListPost();
+        Call<List<FilmModel>> call = postApi.getFilmsList();
 
         call.enqueue(new Callback<List<FilmModel>>() {
             @Override
@@ -92,7 +95,6 @@ public class FilmsFragment extends Fragment {
 
                             Integer film_id = h.getId();
                             idFilms.add(film_id);
-                            Log.d("response", String.valueOf(film_id));
 
                             String rus_title = h.getRusTitle();
                             nameRusFilms.add(rus_title);
@@ -119,18 +121,6 @@ public class FilmsFragment extends Fragment {
         });
     }
 
-    private void initRecyclerView(){
-        Log.d("Films", "initRecyclerView: init recyclerview.");
-        RecyclerFilmsList adapter = new RecyclerFilmsList(getActivity(), idFilms, nameRusFilms, posterFilms, yearFilms);
-        //recyclerViewFilms.setAdapter(adapter);
-        //recyclerViewFilms.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
-        recyclerViewFilms.setLayoutManager(staggeredGridLayoutManager);
-        recyclerViewFilms.setAdapter(adapter);
-    }
-
-
     public void ClearFilmsList()
     {
         idFilms.clear();
@@ -142,6 +132,18 @@ public class FilmsFragment extends Fragment {
         adapter.notifyDataSetChanged();
         recyclerViewFilms.setAdapter(adapter);
     }
+
+    private void initRecyclerView(){
+        Log.d("Films", "initRecyclerView: init recyclerview.");
+        RecyclerFilmsList adapter = new RecyclerFilmsList(getActivity(), idFilms, nameRusFilms, posterFilms, yearFilms);
+
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
+        recyclerViewFilms.setLayoutManager(staggeredGridLayoutManager);
+        recyclerViewFilms.setAdapter(adapter);
+    }
+
+
+
 
     @Override
     public void onResume() {

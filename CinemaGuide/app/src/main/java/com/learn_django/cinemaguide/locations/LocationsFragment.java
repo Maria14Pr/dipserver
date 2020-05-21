@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,6 @@ import com.learn_django.cinemaguide.MainMenuActivity;
 import com.learn_django.cinemaguide.PostApi;
 import com.learn_django.cinemaguide.R;
 
-import com.learn_django.cinemaguide.RegistrationActivity;
 import com.learn_django.cinemaguide.model.LocationModel;
 
 import java.util.ArrayList;
@@ -45,10 +45,13 @@ public class LocationsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ((MainMenuActivity) getActivity()).setActionBarTitle("Локации");
 
+        View locationsRootView = inflater.inflate(R.layout.fragment_locations, container, false);
+        recyclerViewLocations = locationsRootView.findViewById(R.id.recycler_locations_list);
+
         Log.d("LocationsFragment", "---------start------------");
 
         if ( InternetUtil.isInternetOnline(getActivity()) ){
-            //ClearFilmsList();
+            ClearLocationsList();
             showAllLocations();
         }
 
@@ -56,20 +59,20 @@ public class LocationsFragment extends Fragment {
             Log.e("loc", "no internet");
         }
 
-        return inflater.inflate(R.layout.fragment_locations, null);
+        return locationsRootView;
     }
-
+/*
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         recyclerViewLocations = view.findViewById(R.id.recycler_locations_list);
-        /*view.findViewById(R.id.imgbt).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.imgbt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Путешествия", Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
 
-    }
+    }*/
 
     private void showAllLocations() {
 
@@ -79,7 +82,7 @@ public class LocationsFragment extends Fragment {
                 .build();
 
         PostApi postApi= retrofit.create(PostApi.class);
-        Call<List<LocationModel>> call = postApi.getLocationsListPost();
+        Call<List<LocationModel>> call = postApi.getLocationsList();
 
         call.enqueue(new Callback<List<LocationModel>>() {
             @Override
@@ -124,15 +127,43 @@ public class LocationsFragment extends Fragment {
         });
     }
 
+    public void ClearLocationsList()
+    {
+        idLocations.clear();
+        nameRusLocations.clear();
+        photoLocations.clear();
+        countryLocations.clear();
+
+        RecyclerLocationsList adapter = new RecyclerLocationsList(getActivity(), idLocations, nameRusLocations, photoLocations, countryLocations);
+        adapter.notifyDataSetChanged();
+        recyclerViewLocations.setAdapter(adapter);
+    }
+
     private void initRecyclerView(){
         Log.d("Locations", "initRecyclerView: init recyclerview.");
         RecyclerLocationsList adapter = new RecyclerLocationsList(getActivity(), idLocations, nameRusLocations, photoLocations, countryLocations);
-        //recyclerViewFilms.setAdapter(adapter);
-        //recyclerViewFilms.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayoutManager.VERTICAL);
         recyclerViewLocations.setLayoutManager(staggeredGridLayoutManager);
         recyclerViewLocations.setAdapter(adapter);
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+                    getActivity().finish();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
 
