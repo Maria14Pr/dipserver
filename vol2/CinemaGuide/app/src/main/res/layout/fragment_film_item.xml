@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mainBackground"
+    android:layout_height="wrap_content">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rl_filmcard"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginRight="30dp"
+                    android:id="@+id/rl_filminf"
+                    android:layout_centerVertical="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cv_film_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/marineAccent"
+                        android:padding="10dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/tv_fi_rus_title"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textSize="14sp"
+                                android:textColor="@android:color/background_light"
+                                android:text="Русское название"/>
+
+                            <TextView
+                                android:id="@+id/tv_fi_orig_title"
+                                android:layout_marginRight="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:textSize="12sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/tv_fi_rus_title"
+                                android:textColor="@android:color/background_light"
+                                android:text="Оригинальное название"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_fi_genres"
+                                android:layout_marginRight="20dp"
+                                android:layout_width="180dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:textSize="11sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/tv_fi_orig_title"
+                                android:textColor="@android:color/background_light"
+                                android:text="жанры" />
+
+                            <TextView
+                                android:layout_marginBottom="10dp"
+                                android:layout_below="@+id/tv_fi_genres"
+                                android:id="@+id/tv_fi_year"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="20dp"
+                                android:textColor="@android:color/background_light"
+                                android:text="2000"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <ImageView
+                                android:id="@+id/kp_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginBottom="13dp"
+                                android:src="@drawable/ic_kinopoisk" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_alignParentTop="true"
+                    android:layout_width="100dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/cv_fiiv"
+                    android:layout_height="150dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/fi_poster"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_main_icon" />
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_fi_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="Описание фильма"
+                android:layout_below="@id/rl_filmcard"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="20sp"
+                android:id="@+id/kinoput"
+
+                android:layout_marginTop="10dp"
+                android:text="Кинопутешествия"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/kinoput"
+                android:id="@+id/rv_fi_journs"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:layout_height="190dp"/>
+
+        </RelativeLayout>
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="15dp"
+               android:textSize="20sp"
+               android:id="@+id/loka"
+               android:layout_marginTop="10dp"
+               android:text="Локации"/>
+           <android.support.v7.widget.RecyclerView
+               android:layout_below="@id/loka"
+               android:id="@+id/rv_fi_locs"
+               android:layout_width="match_parent"
+               android:layout_margin="15dp"
+               android:layout_height="190dp"/>
+       </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:text="Желаете создать путешествие на основе этого фильма?"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+
+                android:id="@+id/tv_fi_question"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_fi_create_tour"
+                android:layout_below="@id/tv_fi_question"
+                android:background="@color/orangeAccent"
+                android:textColor="@color/mainBackground"
+                android:text="Создать путешествие"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

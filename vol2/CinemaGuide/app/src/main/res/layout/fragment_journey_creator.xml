@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.stepstone.stepper.StepperLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mainBackground"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/stepperLayout"
+    app:ms_activeStepColor="@color/orangeAccent"
+    app:ms_backButtonText="Назад"
+    app:ms_nextButtonText="Далее"
+    app:ms_completeButtonText="Готово"
+    app:ms_completeButtonColor="@color/orangeAccent"
+    app:ms_stepperType="progress_bar">
+</com.stepstone.stepper.StepperLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/mainBackground"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        android:id="@+id/cv_parent_films"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+            <android.support.v7.widget.CardView
+                android:layout_width="80dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cv_fliv"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:layout_centerHorizontal="true"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/ic_main_icon"
+                    android:id="@+id/films_list_poster"
+                    android:scaleType="centerCrop"
+                    />
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название фильма русское"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:id="@+id/tv_fl_name_rus"
+                android:layout_below="@+id/cv_fliv"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="2013"
+                android:layout_marginLeft="10dp"
+                android:textSize="12dp"
+                android:id="@+id/tv_fl_name_year"
+                android:layout_below="@+id/tv_fl_name_rus"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

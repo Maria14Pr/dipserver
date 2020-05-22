@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mainBackground"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:id="@+id/iv_li_photo"
+                android:src="@mipmap/ic_main_icon"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="260dp" />
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_li_name"
+                    android:text="Локация красивая"
+                    android:layout_alignParentBottom="true"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:shadowDx="3"
+                    android:shadowRadius="3"
+                    android:shadowDy="3"
+                    android:shadowColor="@android:color/background_dark"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20dp"/>
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_loc_info"
+                android:layout_below="@id/iv_li_photo"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="-72dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:backgroundTint="@android:color/background_light"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:id="@+id/ll_country"
+                        android:layout_height="24dp">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/iv_li_locicon"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_location_on"/>
+                        <TextView
+                            android:layout_toRightOf="@+id/iv_li_locicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/marineAccent"
+                            android:id="@+id/tv_li_country"
+                            android:textSize="14sp"
+                            android:text="Локация находится здесь"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_below="@id/ll_country"
+                        android:layout_width="match_parent"
+                        android:id="@+id/li_work_cost"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="10dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="@android:color/darker_gray"
+                                android:text="Режим работы"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/tv_li_fromotoc"
+                                android:textSize="14sp"
+                                android:text="11:00-13:00"/>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:background="#F4F4F4"
+                            android:layout_height="37dp"/>
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12sp"
+                                android:textColor="@android:color/darker_gray"
+                                android:text="Стоимость посещения"/>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv_li_visit_cost"
+                                    android:textSize="14sp"
+                                    android:text="1000"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/tv_li_currency"
+                                    android:layout_toRightOf="@id/tv_li_visit_cost"
+                                    android:textSize="14sp"
+                                    android:text=" RUB"/>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:text="Показать на карте"
+                        android:textColor="@android:color/background_light"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:elevation="5dp"
+                        android:layout_height="35dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/li_work_cost"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@color/marineAccent"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="20sp"
+                android:id="@+id/kinoputi"
+
+                android:layout_marginTop="5dp"
+                android:text="Кинопутешествия"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/kinoputi"
+                android:id="@+id/rv_li_journs"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:layout_height="190dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="20sp"
+                android:id="@+id/filmy"
+                android:layout_marginTop="10dp"
+                android:text="Здесь были сняты"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/filmy"
+                android:id="@+id/rv_li_films"
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:layout_height="190dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
