@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/mainBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".creator.GetFullJourneyCostActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_s5_converted_costs"
+        android:layout_alignParentTop="true"
+        android:layout_margin="25dp"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/rl_sum_costs_act"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/rl_sum_costs_act"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/s5_cont_inf"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_s1_get_costs_act"
+                android:layout_width="210dp"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Итоговая стоимость: "/>
+
+            <EditText
+                android:id="@+id/et_jc_s5_sum_cost_act"
+                android:inputType="number"
+                android:layout_width="150dp"
+                android:layout_height="37dp"
+                android:background="#FAFAFA"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/tv_s1_get_costs_act"
+
+                android:padding="5dp"
+                android:hint="0"
+                />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_s5_get_costs"
+            android:textColor="@android:color/white"
+            android:text="Сохранить расчет"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/s5_cont_inf"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@color/orangeAccent"
+            android:elevation="5dp"
+            android:layout_centerHorizontal="true"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

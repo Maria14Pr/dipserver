@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/mainBackground"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="7dp"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        app:cardElevation="2dp"
+        android:id="@+id/cv_cj_parent_locs"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="100dp"
+            android:padding="5dp">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/rl_cj_photo_container"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="100dp"
+                    android:id="@+id/cv_cj_lliv"
+                    android:layout_height="90dp"
+                    app:cardCornerRadius="5dp"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@mipmap/ic_main_icon"
+                        android:id="@+id/iv_cj_locs_list_photo"
+                        android:scaleType="centerCrop"
+                        />
+                </android.support.v7.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/rl_loc_checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/checked_loc_marker"
+                        android:tint="@color/orangeAccent" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_done" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingLeft="5dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="Название локации русское"
+                    android:textStyle="bold"
+                    android:textSize="13dp"
+                    android:id="@+id/tv_cj_ll_name_rus"
+                    android:layout_toRightOf="@+id/rl_cj_icon_container" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Название локации оригинальное"
+                    android:layout_marginTop="2dp"
+                    android:textSize="12dp"
+                    android:id="@+id/tv_cj_ll_name_orig"
+                    android:layout_toRightOf="@+id/rl_cj_icon_container"
+                    android:layout_below="@id/tv_cj_ll_name_rus"/>
+
+                <TextView
+                    android:id="@+id/tv_cj_ll_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_below="@id/tv_cj_ll_name_orig"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/rl_cj_icon_container"
+                    android:text="Страна"
+                    android:textSize="11dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="120"
+                        android:textSize="12dp"
+                        android:id="@+id/tv_cj_ll_cost"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/tv_cj_ll_cost"
+                        android:text="USD"
+                        android:textSize="12dp"
+                        android:id="@+id/tv_cj_ll_cur"
+                        android:layout_marginTop="5dp"/>
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

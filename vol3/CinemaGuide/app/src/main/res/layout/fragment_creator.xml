@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mainBackground"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/tv_c_title"
+        android:textSize="14sp"
+        android:layout_height="wrap_content"
+        android:text="Вы поможете разработке системы 'Киногид', пополнив существующую базу*"
+        android:layout_margin="15dp"/>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_add_film"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_c_title"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:backgroundTint="@android:color/background_light"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_c_ficon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_film_color"/>
+            <TextView
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_c_ficon"
+                android:text="Добавить фильм"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_add_loc"
+        android:layout_below="@id/cv_add_film"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:backgroundTint="@android:color/background_light"
+        android:padding="15dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_c_licon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:src="@drawable/ic_location_color"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_c_licon"
+                android:text="Добавить локацию"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_add_journey"
+        android:layout_below="@id/cv_add_loc"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:backgroundTint="@android:color/background_light"
+        android:padding="15dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_c_jicon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_journey_color"/>
+            <TextView
+                android:layout_marginRight="20dp"
+                android:layout_width="match_parent"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_c_jicon"
+                android:text="Создать путешествие по фильмам"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/cv_add_journey"
+        android:id="@+id/tv_c_botdesc"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="* - Перед пополнением базы, пожалуйста, ознакомтесь с её текущим наполнением, убедитесь в уникальности добавляемого элемента"
+        android:layout_margin="15dp"/>
+</RelativeLayout>

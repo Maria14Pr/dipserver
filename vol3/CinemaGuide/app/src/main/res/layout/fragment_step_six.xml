@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="34dp"
+        android:text="STEP 6"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:id="@+id/jc_step6_nav"
+        android:layout_height="45dp">
+
+        <Button
+            android:id="@+id/btn_jc_s6_back"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/white"
+            android:text="НАЗАД" />
+
+        <Button
+            android:id="@+id/btn_jc_s6_next"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/darker_gray"
+            android:text="далее" />
+        <ProgressBar
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/btn_jc_s6_back"
+            android:layout_toLeftOf="@id/btn_jc_s6_next"
+            android:id="@+id/jc_step6_progress"
+            android:layout_width="200dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="@color/orangeAccent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

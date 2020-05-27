@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground">
+
+    <ScrollView
+        android:layout_alignParentTop="true"
+        android:background="@color/mainBackground"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/jc_step5_nav"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/rl_cj_settings"
+            android:layout_above="@+id/jc_step5_nav"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_margin="15dp"
+
+                android:layout_width="match_parent"
+                android:id="@+id/s5_header"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Для выбранных локаций установлен маршрут путешествия. Настройте свое путешествие"/>
+
+            <RelativeLayout
+
+                android:id="@+id/rl_s5_time"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="15dp"
+                android:layout_below="@+id/s5_header">
+
+                <TextView
+                    android:id="@+id/tv_s5_time"
+                    android:layout_width="170dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Время начала дня в путеществии:"/>
+
+
+                <EditText
+                    android:id="@+id/et_jc_s5_time"
+                    android:inputType="time"
+                    android:layout_width="150dp"
+                    android:layout_height="37dp"
+                    android:background="#FAFAFA"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/tv_s5_time"
+
+                    android:padding="5dp"
+                    android:hint="8:00"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+            <Button
+                android:id="@+id/btn_s5_set_time"
+                android:textColor="@android:color/white"
+                android:text="Изменить время"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_below="@id/rl_s5_time"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:background="@color/orangeAccent"
+                android:elevation="5dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_s1_spin_title"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_s5_set_time"
+                android:text="Выберите валюту путешестивия:*"/>
+
+            <Spinner
+                android:id="@+id/spinner_jc_s5"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/tv_s1_spin_title"
+                android:background="#FAFAFA"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:entries="@array/spinnerCurrency"
+                android:layout_height="37dp"></Spinner>
+
+            <Button
+                android:id="@+id/btn_s5_get_costs"
+                android:textColor="@android:color/white"
+                android:text="Расчитать стоимость"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/spinner_jc_s5"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:background="@color/orangeAccent"
+                android:elevation="5dp"
+                android:layout_centerHorizontal="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_sum_costs"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="15dp"
+                android:layout_below="@+id/btn_s5_get_costs">
+
+                <TextView
+                    android:id="@+id/tv_s1_get_costs"
+                    android:layout_width="210dp"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Стоимость путешествия: "/>
+
+                <EditText
+                    android:id="@+id/et_jc_s5_sum_cost"
+                    android:inputType="number"
+                    android:layout_width="150dp"
+                    android:layout_height="37dp"
+                    android:background="#FAFAFA"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/tv_s1_get_costs"
+
+                    android:padding="5dp"
+                    android:hint="0"
+                    />
+
+
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/cb_s5_set_max_cost"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_below="@+id/rl_sum_costs"
+                android:text="Ограничить стоимость путешествия"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/rl_set_max_costs"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="15dp"
+                android:layout_below="@+id/cb_s5_set_max_cost">
+
+                <TextView
+                    android:id="@+id/tv_s1_set_costs"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_centerVertical="true"
+                    android:text="Введите максимальную стоимость: "/>
+
+                <EditText
+                    android:id="@+id/et_jc_s5_set_cost"
+                    android:inputType="number"
+                    android:layout_width="150dp"
+                    android:layout_height="37dp"
+                    android:background="#FAFAFA"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/tv_s1_set_costs"
+
+                    android:padding="5dp"
+                    android:hint="0"
+                    />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:id="@+id/jc_step5_nav"
+        android:layout_height="45dp">
+
+        <Button
+            android:id="@+id/btn_jc_s5_back"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/white"
+            android:text="НАЗАД" />
+
+        <Button
+            android:id="@+id/btn_jc_s5_next"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/darker_gray"
+            android:text="далее" />
+        <ProgressBar
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/btn_jc_s5_back"
+            android:layout_toLeftOf="@id/btn_jc_s5_next"
+            android:id="@+id/jc_step5_progress"
+            android:layout_width="200dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressTint="@color/orangeAccent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

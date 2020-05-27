@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".RegistrationActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/desc_lin_layout">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Зарегестрировавшись в системе"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shadowColor="@android:color/background_dark"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:id="@+id/title_app_name"
+                android:textSize="36dp"
+                android:text="КИНОГИД"
+                android:layout_above="@+id/slogan"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Вы сможете:"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="- дополнить базу фильмов и локаций"
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="-создать свой уникальный маршрут "
+                android:layout_marginTop="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="- запланировать путешествие мечты по местам из любимых фильмов"
+                android:layout_marginTop="5dp"/>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/reg_username"
+            android:layout_width="240dp"
+            android:layout_height="37dp"
+            android:background="#FAFAFA"
+            android:layout_below="@+id/desc_lin_layout"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="15dp"
+            android:hint="Логин"
+            />
+
+        <EditText
+            android:id="@+id/reg_password"
+            android:layout_width="240dp"
+            android:layout_height="37dp"
+            android:background="#FAFAFA"
+            android:layout_below="@+id/reg_username"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:hint="Пароль"
+            android:layout_marginTop="5dp"
+            />
+
+        <EditText
+            android:id="@+id/reg_email"
+            android:layout_width="240dp"
+            android:layout_height="37dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/reg_password"
+            android:background="#FAFAFA"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="5dp"
+
+            android:hint="Email"/>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="240dp"
+            android:layout_height="37dp"
+            android:text="Зарегистрироваться"
+            android:textColor="@color/colorPrimary"
+            android:background="@color/orangeAccent"
+            android:layout_below="@+id/reg_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

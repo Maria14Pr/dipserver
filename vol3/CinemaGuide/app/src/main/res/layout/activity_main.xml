@@ -1,0 +1,108 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:fitsSystemWindows="true"
+    android:background="@color/mainBackground">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:shadowDx="3"
+        android:shadowRadius="3"
+        android:shadowDy="3"
+        android:shadowColor="@android:color/background_dark"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/main_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="36dp"
+        android:text="ВАШ ЛИЧНЫЙ КИНОГИД"
+        android:layout_above="@+id/slogan"
+        android:paddingBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="200dp"
+        android:textSize="12dp"
+        android:layout_height="wrap_content"
+        android:text="Откройте возможность путешествовать по локациям из Ваших любимых фильмов"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_centerInParent="true"/>
+    <EditText
+        android:id="@+id/et_login"
+        android:layout_width="200dp"
+        android:layout_height="37dp"
+        android:background="#FAFAFA"
+        android:layout_below="@+id/slogan"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:hint="Логин"
+        />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="200dp"
+        android:layout_height="37dp"
+        android:background="#FAFAFA"
+        android:layout_below="@+id/et_login"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="Пароль"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:layout_width="200dp"
+        android:id="@+id/tv_forgot_psw"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:shadowDx="2"
+        android:shadowRadius="2"
+        android:shadowDy="2"
+        android:text="Забыли пароль?"
+        android:gravity="right"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="200dp"
+        android:layout_height="37dp"
+        android:text="Войти"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/marineAccent"
+        android:layout_below="@+id/tv_forgot_psw"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:id="@+id/tvtext_registration"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:shadowDx="2"
+        android:shadowRadius="2"
+        android:shadowDy="2"
+        android:text="У Вас еще нет аккаунта?"
+        android:gravity="left"
+        android:textColor="@android:color/white"/>
+
+
+</RelativeLayout>
