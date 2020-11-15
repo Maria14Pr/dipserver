@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mainBackground"
+    android:layout_height="wrap_content">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/cv_good_item_by_cat"
+        android:layout_width="250dp"
+        app:cardCornerRadius="10dp"
+        android:background="@color/colorPrimaryDark"
+        app:cardElevation="5dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_good_image"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:transitionName="image"
+                app:srcCompat="@mipmap/ic_default_good" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="-20dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_good_image">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Фермер"
+                        android:textColor="@color/colorAccent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="12dp"
+                        android:id="@+id/tv_cg_farmer"
+                        android:layout_marginTop="15dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/ll_desc_cat_good"
+                        android:layout_width="match_parent"
+                        android:layout_below="@+id/tv_cg_farmer"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:id="@+id/rl_good_name"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Название товара"
+                                android:layout_marginBottom="10dp"
+                                android:textStyle="bold"
+                                android:gravity="left"
+                                android:textSize="18dp"
+                                android:id="@+id/tv_cg_name_good"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:id="@+id/rl_price_amount"
+                            android:layout_below="@id/rl_good_name"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@id/rl_good_count"
+                                android:id="@+id/rl_price_only"
+                                android:layout_marginRight="10dp"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:id="@+id/tv_cg_price"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:gravity="right"
+
+                                    android:text="Цена"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16dp" />
+                            </RelativeLayout>
+
+
+
+                            <RelativeLayout
+                                android:layout_centerHorizontal="true"
+                                android:id="@+id/rl_good_count"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="130dp"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/bt_goc_minus"
+                                    android:text="-"
+                                    android:textSize="30dp"
+                                    android:textColor="@color/colorPrimary"
+                                    android:layout_width="40dp"
+                                    android:background="@color/colorAccentGrey"
+                                    android:layout_height="40dp"/>
+
+
+                                <TextView
+                                    android:id="@+id/textViewCount"
+                                    android:layout_toRightOf="@id/bt_goc_minus"
+                                    android:layout_width="50dp"
+                                    android:layout_height="40dp"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/background_dark"
+                                    android:textSize="16dp"
+                                    app:layout_constraintVertical_bias="0.0" />
+
+                                <Button
+                                    android:id="@+id/bt_goc_plus"
+                                    android:text="+"
+                                    android:textSize="30dp"
+                                    android:textColor="@color/colorPrimary"
+                                    android:layout_toRightOf="@+id/textViewCount"
+                                    android:layout_width="40dp"
+                                    android:background="@color/colorLightGreen"
+                                    android:layout_height="40dp"/>
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+
+
+
+                    </RelativeLayout>
+
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="В корзину"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/colorPrimary"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:id="@+id/bt_add_to_cart"
+                        android:layout_below="@+id/ll_desc_cat_good"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

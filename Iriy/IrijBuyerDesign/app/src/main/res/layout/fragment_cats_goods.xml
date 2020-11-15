@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="50dp"
+        android:background="#F5F5F5"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:orientation="vertical"
+        android:weightSum="7"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_goods_count"
+            android:layout_width="320dp"
+            android:rotation="270"
+            android:layout_marginLeft="-135dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="170 товаров"
+            android:gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+        <TextView
+            android:id="@+id/tv_det_cat_name"
+            android:layout_width="320dp"
+            android:rotation="270"
+            android:layout_marginLeft="-135dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Сахар, соль, приправы, специи"
+            android:gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="5"/>
+
+    </LinearLayout>
+
+
+
+
+  <!--
+    <RelativeLayout
+        android:id="@+id/rl_cat_name"
+        android:layout_width="50dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+!-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:weightSum="9"
+        android:paddingTop="30dp"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_goods_of_cat"
+            android:layout_weight="8"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <ProgressBar
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pb_for_cat"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Ирий</string>
+    <string name="str_nav_main">Главная</string>
+    <string name="str_nav_all_goods">Каталог</string>
+    <string name="str_nav_cart">Корзина</string>
+    <string name="str_nav_profile">Профиль</string>
+</resources>

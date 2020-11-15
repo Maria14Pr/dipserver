@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.learn_django.cinemaguide.MainMenuActivity;
 import com.learn_django.cinemaguide.R;
 
+public class CreatorJourneyFragment extends Fragment {
 
 
     @Nullable
